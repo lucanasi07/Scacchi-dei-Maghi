@@ -9,59 +9,48 @@
 <body>
     <div id="stars"></div>
 
-    <div id="game-container">
+    <div id="app">
         <header>
             <h1>⚡ Scacchi dei Maghi ⚡</h1>
-            <p class="subtitle">Hogwarts Wizard Chess</p>
+            <p class="sub">Hogwarts Wizard Chess</p>
         </header>
 
-        <div id="game-layout">
+        <div id="layout">
 
-            <!-- Left Panel -->
-            <div class="side-panel" id="left-panel">
-                <div class="player-card" id="black-card">
-                    <div class="player-title">
-                        <span class="player-icon">🧙</span>
-                        Forze Oscure
-                    </div>
-                    <div class="captured-display" id="black-captured"></div>
+            <!-- Left -->
+            <div class="panel" id="lpanel">
+                <div class="pcard" id="bcard">
+                    <div class="ptitle"><span class="picon">🧙</span>Forze Oscure</div>
+                    <div class="caps" id="bcaps"></div>
                 </div>
-
-                <div class="log-box">
-                    <div class="log-header">📜 Cronaca della Battaglia</div>
-                    <div id="battle-log"></div>
+                <div class="logbox">
+                    <div class="logtitle">📜 Cronaca della Battaglia</div>
+                    <div id="blog"></div>
                 </div>
             </div>
 
-            <!-- Center: Board -->
-            <div id="center-panel">
-                <div id="board-wrapper">
-                    <div id="board"></div>
-                </div>
-                <div id="status-bar">
-                    <div id="turn-display">⚔️ Turno del Bianco</div>
-                    <div id="check-display"></div>
+            <!-- Center -->
+            <div id="center">
+                <div id="board"></div>
+                <div id="statusbar">
+                    <div id="turndsp">⚔️ Turno del Bianco</div>
+                    <div id="chkdsp"></div>
                 </div>
             </div>
 
-            <!-- Right Panel -->
-            <div class="side-panel" id="right-panel">
-                <div class="player-card" id="white-card">
-                    <div class="player-title">
-                        <span class="player-icon">🧙‍♀️</span>
-                        Forze della Luce
-                    </div>
-                    <div class="captured-display" id="white-captured"></div>
+            <!-- Right -->
+            <div class="panel" id="rpanel">
+                <div class="pcard" id="wcard">
+                    <div class="ptitle"><span class="picon">🧙‍♀️</span>Forze della Luce</div>
+                    <div class="caps" id="wcaps"></div>
                 </div>
-
-                <div id="controls">
+                <div id="ctrl">
                     <button onclick="newGame()">🔄 Nuova Partita</button>
                     <button onclick="undoMove()">↩️ Annulla Mossa</button>
                 </div>
-
-                <div class="log-box">
-                    <div class="log-header">📋 Cronologia Mosse</div>
-                    <div id="move-history"></div>
+                <div class="logbox">
+                    <div class="logtitle">📋 Cronologia Mosse</div>
+                    <div id="mhist"></div>
                 </div>
             </div>
 
@@ -69,20 +58,20 @@
     </div>
 
     <!-- Promotion Modal -->
-    <div id="promotion-modal" class="modal hidden">
-        <div class="modal-content">
+    <div id="prmodal" class="modal hidden">
+        <div class="mdlbox">
             <h2>✨ Promuovi il Pedone!</h2>
             <p>Scegli il nuovo pezzo:</p>
-            <div id="promotion-choices"></div>
+            <div id="prchoices"></div>
         </div>
     </div>
 
     <!-- Game Over Modal -->
-    <div id="gameover-modal" class="modal hidden">
-        <div class="modal-content">
-            <div id="gameover-magic">✨</div>
-            <h2 id="gameover-title"></h2>
-            <p id="gameover-msg"></p>
+    <div id="gomodal" class="modal hidden">
+        <div class="mdlbox">
+            <div id="gomagic">✨</div>
+            <h2 id="gotitle"></h2>
+            <p  id="gomsg"></p>
             <button onclick="newGame()">🔄 Gioca Ancora</button>
         </div>
     </div>
