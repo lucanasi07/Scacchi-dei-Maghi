@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scacchi dei Maghi ⚡</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="stars"></div>
+
+    <div id="game-container">
+        <header>
+            <h1>⚡ Scacchi dei Maghi ⚡</h1>
+            <p class="subtitle">Hogwarts Wizard Chess</p>
+        </header>
+
+        <div id="game-layout">
+
+            <!-- Left Panel -->
+            <div class="side-panel" id="left-panel">
+                <div class="player-card" id="black-card">
+                    <div class="player-title">
+                        <span class="player-icon">🧙</span>
+                        Forze Oscure
+                    </div>
+                    <div class="captured-display" id="black-captured"></div>
+                </div>
+
+                <div class="log-box">
+                    <div class="log-header">📜 Cronaca della Battaglia</div>
+                    <div id="battle-log"></div>
+                </div>
+            </div>
+
+            <!-- Center: Board -->
+            <div id="center-panel">
+                <div id="board-wrapper">
+                    <div id="board"></div>
+                </div>
+                <div id="status-bar">
+                    <div id="turn-display">⚔️ Turno del Bianco</div>
+                    <div id="check-display"></div>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="side-panel" id="right-panel">
+                <div class="player-card" id="white-card">
+                    <div class="player-title">
+                        <span class="player-icon">🧙‍♀️</span>
+                        Forze della Luce
+                    </div>
+                    <div class="captured-display" id="white-captured"></div>
+                </div>
+
+                <div id="controls">
+                    <button onclick="newGame()">🔄 Nuova Partita</button>
+                    <button onclick="undoMove()">↩️ Annulla Mossa</button>
+                </div>
+
+                <div class="log-box">
+                    <div class="log-header">📋 Cronologia Mosse</div>
+                    <div id="move-history"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Promotion Modal -->
+    <div id="promotion-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>✨ Promuovi il Pedone!</h2>
+            <p>Scegli il nuovo pezzo:</p>
+            <div id="promotion-choices"></div>
+        </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="gameover-modal" class="modal hidden">
+        <div class="modal-content">
+            <div id="gameover-magic">✨</div>
+            <h2 id="gameover-title"></h2>
+            <p id="gameover-msg"></p>
+            <button onclick="newGame()">🔄 Gioca Ancora</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
